@@ -57,6 +57,15 @@
             margin-top: 2px;
         }
 
+        .motivation-message,
+        .goal-message {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -90,6 +99,93 @@
             color: var(--text-muted);
         }
 
+        .quick-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .stat-pill {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(2, 132, 199, 0.15));
+            border: 1px solid rgba(2, 132, 199, 0.14);
+            border-radius: 16px;
+            padding: 12px 10px;
+            text-align: center;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-height: 74px;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.08);
+        }
+
+        .stat-pill.saved-pill {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.18));
+            border-color: rgba(34, 197, 94, 0.18);
+            box-shadow: 0 4px 10px rgba(34, 197, 94, 0.08);
+        }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .settings-card {
+            padding: 16px 18px;
+        }
+
+        .settings-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .settings-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .setting-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .setting-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .price-input {
+            width: 120px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-align: right;
+            background: #f8fafc;
+        }
+
         .metrics-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -119,6 +215,56 @@
             font-size: 18px;
             font-weight: 700;
             margin-top: 2px;
+        }
+
+        .chart-card,
+        .benefit-card {
+            padding: 18px 16px;
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .chart-wrapper {
+            width: 100%;
+            height: 160px;
+            margin-top: 8px;
+        }
+
+        .chart-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .chart-legend {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .chart-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: inline-block;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-main);
+            font-weight: 600;
         }
 
         .action-area {
@@ -184,6 +330,134 @@
         }
 
         /* Modal / Craving Screen */
+        .setup-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.38);
+            z-index: 200;
+            padding: 24px 16px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .setup-modal.active {
+            display: flex;
+        }
+
+        .setup-card {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            border-radius: 24px;
+            padding: 22px 18px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+        }
+
+        .setup-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .setup-subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .option-card {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 14px 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.18s ease;
+            text-align: center;
+        }
+
+        .option-card.selected {
+            border-color: var(--primary);
+            background: rgba(2, 132, 199, 0.08);
+            color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.08);
+        }
+
+        .setup-field {
+            margin-bottom: 16px;
+        }
+
+        .setup-label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .setup-input {
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 15px;
+            background: #f8fafc;
+            color: var(--text-main);
+        }
+
+        .setup-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e2e8f0;
+            color: var(--text-main);
+        }
+
+        .settings-trigger {
+            margin-top: 14px;
+            border: 1px solid #cbd5e1;
+            background: transparent;
+            border-radius: 12px;
+            padding: 10px 12px;
+            color: var(--text-main);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -221,6 +495,16 @@
             font-weight: 600;
             margin-top: 8px;
             height: 24px;
+        }
+
+        .motivation-toast {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.4;
+            min-height: 36px;
         }
 
         .breath-container {
@@ -285,36 +569,101 @@
     </style>
 </head>
 <body>
+    <div class="setup-modal active" id="setupModal">
+        <div class="setup-card">
+            <h2 class="setup-title">Personaliza tu proceso</h2>
+            <p class="setup-subtitle">Configurá tu motivación y tus costos para que la app se adapte a vos.</p>
+
+            <div class="setup-field">
+                <label class="setup-label">¿Por qué querés dejar de fumar?</label>
+                <div class="option-grid" id="motivationGrid">
+                    <button type="button" class="option-card selected" data-motivation="salud">Salud</button>
+                    <button type="button" class="option-card" data-motivation="dinero">Dinero</button>
+                    <button type="button" class="option-card" data-motivation="familia">Familia</button>
+                    <button type="button" class="option-card" data-motivation="bienestar">Bienestar</button>
+                </div>
+            </div>
+
+            <div class="setup-field">
+                <label class="setup-label" for="nameInput">¿Cómo te llamás?</label>
+                <input class="setup-input" id="nameInput" type="text" placeholder="Ej: Lucas" maxlength="30" />
+            </div>
+
+            <div class="setup-field">
+                <label class="setup-label" for="cigarettesPerDayInput">¿Cuántos cigarrillos fumas por día?</label>
+                <input class="setup-input" id="cigarettesPerDayInput" type="number" min="0" step="1" value="10" />
+            </div>
+
+            <div class="setup-field">
+                <label class="setup-label" for="dailyGoalInput">¿Cuál es tu meta diaria de cigarrillos?</label>
+                <input class="setup-input" id="dailyGoalInput" type="number" min="0" step="1" value="7" />
+            </div>
+
+            <div class="setup-field">
+                <label class="setup-label" for="pricePerCigaretteSetupInput">¿Cuánto vale cada cigarrillo? ($ ARS)</label>
+                <input class="setup-input" id="pricePerCigaretteSetupInput" type="number" min="1" step="1" value="150" />
+            </div>
+
+            <div class="setup-actions">
+                <button type="button" class="btn-primary" id="saveSetupBtn">Guardar perfil</button>
+            </div>
+        </div>
+    </div>
 
     <header>
         <h1>LIBRE</h1>
-        <p>Tu camino hacia una vida sin humo</p>
+        <p id="welcomeMessage">Hola, amigo</p>
+        <p id="userProfileMessage">Tu camino hacia una vida sin humo</p>
+        <p class="motivation-message" id="motivationMessage">Tu salud te lo va a agradecer.</p>
+        <p class="goal-message" id="dailyGoalMessage">Meta diaria: 7 cigarrillos.</p>
     </header>
-
-    <div class="card hero-card">
-        <div class="hero-title">Tiempo Libre de Humo</div>
-        <div class="timer-display" id="timeCounter">00d 00h 00m</div>
-        <div class="hero-sub" id="lastSmokedSub">Desde tu último registro</div>
-    </div>
-
-    <div class="metrics-grid">
-        <div class="metric-card">
-            <div class="icon">💰</div>
-            <div class="label">Ahorro Estimado</div>
-            <div class="value" id="savedMoney">$0 ARS</div>
-        </div>
-        <div class="metric-card">
-            <div class="icon">🛡️</div>
-            <div class="label">Cigarrillos Evitados</div>
-            <div class="value" id="avoidedCount">0</div>
-        </div>
-    </div>
 
     <div class="action-area">
         <button class="btn-craving" id="btnAnsiedad">
             <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
             <span>¡TENGO ANSIEDAD!</span>
         </button>
+    </div>
+
+    <div class="card hero-card">
+        <div class="hero-title">Tiempo Libre de Humo</div>
+        <div class="timer-display" id="timeCounter">00d 00h 00m</div>
+        <div class="hero-sub" id="lastSmokedSub">Desde tu último registro</div>
+
+        <div class="quick-stats">
+            <div class="stat-pill" aria-live="polite">
+                <span class="stat-label">Evitados</span>
+                <span class="stat-value" id="avoidedCount">0</span>
+            </div>
+            <button type="button" class="stat-pill saved-pill" id="savedMoneyBtn" aria-label="Dinero ahorrado">
+                <span class="stat-label">Ahorrado</span>
+                <span class="stat-value" id="savedMoney">$0 ARS</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="card chart-card">
+        <div class="card-title">Tendencia semanal</div>
+        <div class="chart-wrapper">
+            <svg class="chart-svg" id="weeklyChart" viewBox="0 0 320 160" preserveAspectRatio="none" aria-label="Gráfico de consumo semanal"></svg>
+        </div>
+        <div class="chart-legend"><span class="chart-dot"></span> Cigarrillos por día</div>
+    </div>
+
+    <div class="card benefit-card">
+        <div class="card-title">Dato de salud</div>
+        <div class="benefit-text" id="healthBenefitText">Tu cuerpo mejora cada día que consumes menos tabaco.</div>
+    </div>
+
+    <div class="card settings-card">
+        <div class="settings-header">
+            <div class="settings-title">Configuración</div>
+        </div>
+        <div class="setting-row">
+            <label class="setting-label" for="pricePerCigaretteInput">Precio por cigarrillo</label>
+            <input id="pricePerCigaretteInput" class="price-input" type="number" min="1" step="1" inputmode="numeric" aria-label="Precio por cigarrillo" />
+        </div>
+        <button type="button" class="settings-trigger" id="editProfileBtn">Editar mi perfil</button>
     </div>
 
     <button class="btn-smoke" id="btnFumeDirecto">+ Registrar un cigarrillo fumado</button>
@@ -324,6 +673,7 @@
         <div class="modal-header">
             <div class="timer-countdown" id="cravingTimer">03:00</div>
             <div class="instruction" id="breathInstruction">Inhala profundamente...</div>
+            <div class="motivation-toast" id="modalMotivationText">Tu salud te lo va a agradecer.</div>
         </div>
 
         <div class="breath-container">
@@ -340,25 +690,313 @@
 
     <script>
         // Configuración y Estado Persistente
+        const motivationLabels = {
+            salud: 'Salud',
+            dinero: 'Dinero',
+            familia: 'Familia',
+            bienestar: 'Bienestar'
+        };
+
+        const motivationMessages = {
+            salud: 'Tu salud te lo va a agradecer.',
+            dinero: 'Cada cigarrillo que evites suma a tu bolsillo.',
+            familia: 'Más tiempo y presencia para tu familia.',
+            bienestar: 'Tu cuerpo y tu mente van a respirar mejor.'
+        };
+
+        const motivationThemes = {
+            salud: {
+                primary: '#0284c7',
+                hover: '#0369a1',
+                bg: '#e0f2fe',
+                accent: '#38bdf8'
+            },
+            dinero: {
+                primary: '#16a34a',
+                hover: '#15803d',
+                bg: '#dcfce7',
+                accent: '#4ade80'
+            },
+            familia: {
+                primary: '#7c3aed',
+                hover: '#6d28d9',
+                bg: '#ede9fe',
+                accent: '#a78bfa'
+            },
+            bienestar: {
+                primary: '#f97316',
+                hover: '#ea580c',
+                bg: '#ffedd5',
+                accent: '#fb923c'
+            }
+        };
+
+        function getDefaultProfile() {
+            return {
+                name: 'Amigo',
+                motivation: 'salud',
+                cigarettesPerDay: 10,
+                dailyGoal: 7,
+                pricePerCigarette: 150
+            };
+        }
+
+        function getProfile() {
+            const saved = localStorage.getItem('libre_profile');
+            if (!saved) return getDefaultProfile();
+
+            try {
+                const parsed = JSON.parse(saved);
+                return { ...getDefaultProfile(), ...parsed };
+            } catch (error) {
+                return getDefaultProfile();
+            }
+        }
+
+        function getDailyLog() {
+            const raw = localStorage.getItem('libre_daily_log');
+            if (!raw) return [];
+
+            try {
+                return JSON.parse(raw);
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function getDateKey(date) {
+            return new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+        }
+
         let state = {
             avoided: parseInt(localStorage.getItem('libre_avoided') || '0'),
             smoked: parseInt(localStorage.getItem('libre_smoked') || '0'),
-            lastSmoked: localStorage.getItem('libre_last_smoked') ? new Date(localStorage.getItem('libre_last_smoked')) : new Date()
+            lastSmoked: localStorage.getItem('libre_last_smoked') ? new Date(localStorage.getItem('libre_last_smoked')) : new Date(),
+            profile: getProfile(),
+            dailyLog: getDailyLog(),
+            lastBenefitAt: localStorage.getItem('libre_last_benefit_at') ? new Date(Number(localStorage.getItem('libre_last_benefit_at'))) : new Date(Date.now() - 86400001)
         };
 
-        const pricePerCigarette = 150; // Valor de referencia en ARS
+        state.pricePerCigarette = Number(state.profile.pricePerCigarette) || 150;
+
+        const priceInput = document.getElementById('pricePerCigaretteInput');
+        const setupModal = document.getElementById('setupModal');
+        const motivationGrid = document.getElementById('motivationGrid');
+        const cigarettesPerDayInput = document.getElementById('cigarettesPerDayInput');
+        const dailyGoalInput = document.getElementById('dailyGoalInput');
+        const pricePerCigaretteSetupInput = document.getElementById('pricePerCigaretteSetupInput');
+        const nameInput = document.getElementById('nameInput');
+        const userProfileMessage = document.getElementById('userProfileMessage');
+        const motivationMessage = document.getElementById('motivationMessage');
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        const dailyGoalMessage = document.getElementById('dailyGoalMessage');
+
+        function safeSetText(id, value) {
+            const node = document.getElementById(id);
+            if (node) node.textContent = value;
+        }
+
+        function applyMotivationTheme() {
+            const theme = motivationThemes[state.profile.motivation] || motivationThemes.salud;
+            const root = document.documentElement;
+            root.style.setProperty('--primary', theme.primary);
+            root.style.setProperty('--primary-hover', theme.hover);
+            root.style.setProperty('--bg-color', theme.bg);
+        }
+
+        function saveProfile() {
+            state.profile = {
+                name: String(state.profile.name || 'Amigo').trim() || 'Amigo',
+                motivation: state.profile.motivation || 'salud',
+                cigarettesPerDay: Number(state.profile.cigarettesPerDay) || 0,
+                dailyGoal: Number(state.profile.dailyGoal) || 0,
+                pricePerCigarette: Number(state.profile.pricePerCigarette) || 150
+            };
+
+            state.pricePerCigarette = state.profile.pricePerCigarette;
+            localStorage.setItem('libre_profile', JSON.stringify(state.profile));
+            localStorage.setItem('libre_price_per_cigarette', String(state.profile.pricePerCigarette));
+            updateUI();
+        }
+
+        function logDailyCigaretteCount(delta) {
+            const todayKey = getDateKey(new Date());
+            let entry = state.dailyLog.find(item => item.date === todayKey);
+
+            if (!entry) {
+                entry = { date: todayKey, count: 0 };
+                state.dailyLog.push(entry);
+            }
+
+            entry.count = Math.max(0, entry.count + delta);
+            localStorage.setItem('libre_daily_log', JSON.stringify(state.dailyLog));
+        }
+
+        function getRecentWeekData() {
+            const result = [];
+            for (let i = 6; i >= 0; i--) {
+                const date = new Date();
+                date.setHours(0, 0, 0, 0);
+                date.setDate(date.getDate() - i);
+                const key = getDateKey(date);
+                const entry = state.dailyLog.find(item => item.date === key);
+                result.push({ date: key, count: entry ? entry.count : 0 });
+            }
+            return result;
+        }
+
+        function renderWeeklyChart() {
+            const svg = document.getElementById('weeklyChart');
+            if (!svg) return;
+
+            const data = getRecentWeekData();
+            const values = data.map(item => item.count);
+            const maxValue = Math.max(1, ...values);
+            const width = 320;
+            const height = 160;
+            const padding = 18;
+            const chartHeight = height - padding * 2;
+            const chartWidth = width - padding * 2;
+
+            const linePoints = values.map((value, index) => {
+                const x = padding + (chartWidth / Math.max(1, values.length - 1)) * index;
+                const y = height - padding - (value / maxValue) * chartHeight;
+                return `${x},${y}`;
+            });
+
+            const areaPoints = `${linePoints[0]} ${linePoints.join(' ')} ${width - padding},${height - padding} ${padding},${height - padding}`;
+            const path = linePoints.length ? `M ${linePoints[0].replace(',', ' ')} ${linePoints.slice(1).map(point => `L ${point.replace(',', ' ')}`).join(' ')}` : '';
+
+            svg.innerHTML = `
+                <defs>
+                    <linearGradient id="chartGlow" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.34"/>
+                        <stop offset="100%" stop-color="var(--primary)" stop-opacity="0.04"/>
+                    </linearGradient>
+                </defs>
+                <path d="M ${padding} ${height - padding} L ${linePoints.map(point => point.replace(',', ' ')).join(' L ')} L ${width - padding} ${height - padding} Z" fill="url(#chartGlow)" opacity="0.9"></path>
+                <path d="${path}" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                ${linePoints.map((point, index) => {
+                    const [x, y] = point.split(',');
+                    return `<circle cx="${x}" cy="${y}" r="4" fill="var(--primary)"></circle>`;
+                }).join('')}
+            `;
+        }
+
+        function generateBenefitMessage() {
+            const todayKey = getDateKey(new Date());
+            const todayCount = (state.dailyLog.find(item => item.date === todayKey) || { count: 0 }).count;
+            const baseline = Number(state.profile.cigarettesPerDay) || 0;
+            const reduction = Math.max(0, baseline - todayCount);
+
+            if (reduction >= 5) {
+                return 'Tras reducir tu consumo, tu presión arterial y tus pulmones empiezan a recuperarse.';
+            }
+            if (reduction >= 2) {
+                return 'Tu cuerpo ya está reaccionando: menos nicotina ayuda a mejorar tu circulación y respiración.';
+            }
+            if (todayCount <= Math.max(0, baseline - 1)) {
+                return 'Cada cigarrillo menos ayuda a que tus vasos sanguíneos se relajen y respires mejor.';
+            }
+            return 'Tu cuerpo mejora cada día que consumís menos tabaco; hoy es una buena oportunidad para seguir.';
+        }
+
+        function updateHealthBenefit() {
+            const healthText = document.getElementById('healthBenefitText');
+            const now = Date.now();
+            const lastBenefit = Number(localStorage.getItem('libre_last_benefit_at') || 0);
+
+            if (!healthText) return;
+
+            if (!lastBenefit || now - lastBenefit >= 86400000) {
+                const message = generateBenefitMessage();
+                healthText.textContent = message;
+                localStorage.setItem('libre_last_benefit_at', String(now));
+            } else {
+                healthText.textContent = localStorage.getItem('libre_last_benefit_message') || generateBenefitMessage();
+            }
+
+            const currentMessage = healthText.textContent;
+            localStorage.setItem('libre_last_benefit_message', currentMessage);
+        }
 
         function saveState() {
             localStorage.setItem('libre_avoided', state.avoided);
             localStorage.setItem('libre_smoked', state.smoked);
             localStorage.setItem('libre_last_smoked', state.lastSmoked.toISOString());
+            saveProfile();
+            renderWeeklyChart();
+            updateHealthBenefit();
             updateUI();
         }
 
         function updateUI() {
-            document.getElementById('avoidedCount').textContent = state.avoided;
-            document.getElementById('savedMoney').textContent = '$' + (state.avoided * pricePerCigarette).toLocaleString('es-AR') + ' ARS';
+            const price = Number(state.profile.pricePerCigarette) || 0;
+            const motivationText = motivationLabels[state.profile.motivation] || 'Tu motivación';
+            const motivationTextMessage = motivationMessages[state.profile.motivation] || 'Tu camino empieza hoy.';
+            const displayName = String(state.profile.name || 'Amigo').trim() || 'Amigo';
+            const dailyGoal = Number(state.profile.dailyGoal) || Math.max(0, Number(state.profile.cigarettesPerDay) - 1) || 0;
+
+            if (priceInput) priceInput.value = price;
+            if (welcomeMessage) welcomeMessage.textContent = `Hola, ${displayName}`;
+            if (userProfileMessage) userProfileMessage.textContent = `Tu motivación: ${motivationText}`;
+            if (motivationMessage) motivationMessage.textContent = motivationTextMessage;
+            if (dailyGoalMessage) dailyGoalMessage.textContent = `Meta diaria: ${dailyGoal} cigarrillos.`;
+            if (modalMotivationText) modalMotivationText.textContent = motivationTextMessage;
+            safeSetText('avoidedCount', state.avoided);
+            safeSetText('savedMoney', '$' + (state.avoided * price).toLocaleString('es-AR') + ' ARS');
+            const savedMoneyBtn = document.getElementById('savedMoneyBtn');
+            if (savedMoneyBtn) savedMoneyBtn.title = `Ahorrado: $${(state.avoided * price).toLocaleString('es-AR')} ARS`;
+            applyMotivationTheme();
+            renderWeeklyChart();
+            updateHealthBenefit();
             updateTimerDisplay();
+        }
+
+        function openSetupModal() {
+            const profile = state.profile;
+            const selected = document.querySelector(`.option-card[data-motivation="${profile.motivation}"]`);
+            document.querySelectorAll('.option-card').forEach((button) => {
+                button.classList.toggle('selected', button === selected);
+            });
+            if (nameInput) nameInput.value = profile.name || 'Amigo';
+            if (cigarettesPerDayInput) cigarettesPerDayInput.value = profile.cigarettesPerDay || 10;
+            if (dailyGoalInput) dailyGoalInput.value = profile.dailyGoal || Math.max(0, Number(profile.cigarettesPerDay) - 1) || 0;
+            if (pricePerCigaretteSetupInput) pricePerCigaretteSetupInput.value = profile.pricePerCigarette || 150;
+            if (setupModal) setupModal.classList.add('active');
+        }
+
+        function closeSetupModal() {
+            if (setupModal) setupModal.classList.remove('active');
+        }
+
+        motivationGrid.addEventListener('click', (event) => {
+            const option = event.target.closest('.option-card');
+            if (!option) return;
+
+            document.querySelectorAll('.option-card').forEach((button) => {
+                button.classList.toggle('selected', button === option);
+            });
+
+            state.profile.motivation = option.dataset.motivation;
+        });
+
+        const saveSetupBtn = document.getElementById('saveSetupBtn');
+        const editProfileBtn = document.getElementById('editProfileBtn');
+
+        if (saveSetupBtn) {
+            saveSetupBtn.addEventListener('click', () => {
+                state.profile.name = String(nameInput?.value || '').trim() || 'Amigo';
+                state.profile.cigarettesPerDay = Number(cigarettesPerDayInput?.value) || 0;
+                state.profile.dailyGoal = Number(dailyGoalInput?.value) || 0;
+                state.profile.pricePerCigarette = Number(pricePerCigaretteSetupInput?.value) || 150;
+                saveProfile();
+                closeSetupModal();
+            });
+        }
+
+        if (editProfileBtn) {
+            editProfileBtn.addEventListener('click', openSetupModal);
         }
 
         function updateTimerDisplay() {
@@ -379,15 +1017,98 @@
         // Lógica del Temporizador de Respiración (3 min)
         let cravingInterval = null;
         let breathInterval = null;
+        let ambientInterval = null;
         let secondsLeft = 180;
+        let ambientAudioCtx = null;
+        let ambientNodes = [];
 
         const modal = document.getElementById('cravingModal');
         const cravingTimerEl = document.getElementById('cravingTimer');
         const breathInstructionEl = document.getElementById('breathInstruction');
         const breathCircleEl = document.getElementById('breathCircle');
+        const modalMotivationText = document.getElementById('modalMotivationText');
+
+        function updateModalMotivationText() {
+            if (!modalMotivationText) return;
+            modalMotivationText.textContent = motivationMessages[state.profile.motivation] || 'Cada paso cuenta.';
+        }
+
+        function ensureAmbientAudio() {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) return null;
+
+            if (!ambientAudioCtx) {
+                ambientAudioCtx = new AudioContextClass();
+            }
+
+            if (ambientAudioCtx.state === 'suspended') {
+                ambientAudioCtx.resume();
+            }
+
+            return ambientAudioCtx;
+        }
+
+        function startAmbientRelaxation() {
+            const ctx = ensureAmbientAudio();
+            if (!ctx) return;
+
+            stopAmbientRelaxation();
+
+            const frequencies = [174.61, 220, 261.63];
+            frequencies.forEach((frequency, index) => {
+                const oscillator = ctx.createOscillator();
+                const gainNode = ctx.createGain();
+
+                oscillator.type = index === 0 ? 'sine' : 'triangle';
+                oscillator.frequency.setValueAtTime(frequency, ctx.currentTime);
+
+                gainNode.gain.setValueAtTime(0.0001, ctx.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.028, ctx.currentTime + 1.5);
+                gainNode.gain.linearRampToValueAtTime(0.018, ctx.currentTime + 4.5);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(ctx.destination);
+                oscillator.start();
+
+                ambientNodes.push({ oscillator, gainNode });
+            });
+
+            ambientInterval = setInterval(() => {
+                if (!ambientAudioCtx || ambientNodes.length === 0) return;
+
+                ambientNodes.forEach(({ oscillator, gainNode }, index) => {
+                    const nextFrequency = [174.61, 220, 261.63][index] * (1 + (Math.sin(Date.now() / 1000 + index) * 0.02));
+                    oscillator.frequency.setTargetAtTime(nextFrequency, ambientAudioCtx.currentTime, 2.5);
+                    gainNode.gain.setTargetAtTime(0.02 + (index * 0.003), ambientAudioCtx.currentTime, 2.5);
+                });
+            }, 2500);
+        }
+
+        function stopAmbientRelaxation() {
+            clearInterval(ambientInterval);
+            ambientInterval = null;
+
+            if (!ambientAudioCtx || ambientNodes.length === 0) return;
+
+            ambientNodes.forEach(({ oscillator, gainNode }) => {
+                try {
+                    const now = ambientAudioCtx.currentTime;
+                    gainNode.gain.cancelScheduledValues(now);
+                    gainNode.gain.setValueAtTime(gainNode.gain.value || 0.02, now);
+                    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
+                    oscillator.stop(now + 0.7);
+                } catch (error) {
+                    // Ignora detenciones ya finalizadas.
+                }
+            });
+
+            ambientNodes = [];
+        }
 
         document.getElementById('btnAnsiedad').addEventListener('click', () => {
             modal.classList.add('active');
+            updateModalMotivationText();
+            startAmbientRelaxation();
             startCravingSession();
         });
 
@@ -435,18 +1156,21 @@
             modal.classList.remove('active');
             clearInterval(cravingInterval);
             clearInterval(breathInterval);
+            stopAmbientRelaxation();
         }
 
         document.getElementById('btnLoSupere').addEventListener('click', () => {
             state.avoided++;
             saveState();
             closeCravingModal();
-            alert('¡Excelente victoria guardada!');
+            const message = motivationMessages[state.profile.motivation] || 'Cada paso cuenta.';
+            alert(`¡Excelente victoria guardada! ${message}`);
         });
 
         document.getElementById('btnFumeModal').addEventListener('click', () => {
             state.smoked++;
             state.lastSmoked = new Date();
+            logDailyCigaretteCount(1);
             saveState();
             closeCravingModal();
         });
@@ -455,13 +1179,26 @@
             if (confirm('¿Confirmas que fumaste un cigarrillo?')) {
                 state.smoked++;
                 state.lastSmoked = new Date();
+                logDailyCigaretteCount(1);
                 saveState();
             }
+        });
+
+        priceInput.addEventListener('input', (event) => {
+            const value = Number(event.target.value);
+            const safeValue = Number.isFinite(value) && value > 0 ? value : 0;
+            state.profile.pricePerCigarette = safeValue;
+            state.pricePerCigarette = safeValue;
+            saveState();
         });
 
         // Registrar Service Worker para PWA
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+
+        if (!localStorage.getItem('libre_profile')) {
+            openSetupModal();
         }
 
         updateUI();
